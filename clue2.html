@@ -2,59 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Stage 2 // Intercepted Stream</title>
+    <title>404 Not Found</title>
     <style>
         body {
-            background-color: #0b0f19;
-            color: #94a3b8;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            border: 1px solid #1e293b;
-            background: #0f172a;
-        }
-        h1 {
-            color: #ef4444;
-            font-size: 1.5rem;
-        }
-        .payload {
-            background: #020617;
-            color: #00ff66;
-            padding: 15px;
-            margin: 20px 0;
-            border-left: 3px solid #00ff66;
-            word-break: break-all;
-            font-size: 1.1rem;
+            background-color: #000000;
+            color: #000000; /* Completely invisible text until highlighted */
+            font-family: monospace;
+            padding: 40px;
             user-select: text;
         }
-        a {
-            color: #38bdf8;
-            text-decoration: none;
+        .decoy-error {
+            color: #555555; /* Looks like a generic server crash message */
+            font-size: 14px;
         }
-        a:hover {
-            text-decoration: underline;
+        .payload {
+            margin-top: 50px;
+            /* Matches the exact black background so it's hidden */
+            background-color: #000000; 
+            color: #000000;
+        }
+        /* When highlighted via Ctrl+A, text turns bright green */
+        ::selection {
+            background: #00ff66;
+            color: #000000;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>CLASSIFIED // STAGE 2 PAYLOAD</h1>
-        <p>[SYSTEM LOG: Stream successfully accessed.]</p>
-        <p>Extract the raw stream parameter below:</p>
-        
-        <div class="payload">
-            5A 5A 59 2D 53 52 31
-        </div>
-        
-        <p>Next vector coordinate found: <a href="clue2_target.png">clue2_target.png</a></p>
+    <div class="decoy-error">
+        Error 503: Service temporarily unavailable. Stream node unresponsive.
+    </div>
+
+    <!-- Hidden payload revealed only on Ctrl + A selection -->
+    <div class="payload">
+        [INTERCEPTED STREAM DATA]
+        HEX_PAYLOAD: 5A 5A 59 2D 53 52 31
+        TARGET_NODE: clue2_target.png
     </div>
 </body>
 </html>
