@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Authentication</title>
+    <style>
+        body { background-color: #0b0f19; color: #00ff66; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        input, button { background: #111; border: 1px solid #00ff66; color: #00ff66; padding: 10px; margin: 5px; font-family: monospace; }
+        button { cursor: pointer; }
+        button:hover { background: #00ff66; color: #000; }
+    </style>
+</head>
+<body>
+    <h1>SYSTEM OVERRIDE TERMINAL</h1>
+    <input type="text" id="pass1" placeholder="Enter Password 1">
+    <input type="text" id="pass2" placeholder="Enter Password 2">
+    <button onclick="checkKeys()">AUTHENTICATE</button>
+    <h2 id="result"></h2>
+
+    <script>
+        function checkKeys() {
+            const p1 = document.getElementById('pass1').value.trim();
+            const p2 = document.getElementById('pass2').value.trim();
+            if (p1 === 'SHM-121' && p2 === 'SSR-LK1') {
+                document.getElementById('result').innerText = "ACCESS GRANTED: YOU WIN!";
+            } else {
+                document.getElementById('result').style.color = "#ff4444";
+                document.getElementById('result').innerText = "ACCESS DENIED: INVALID CREDENTIALS";
+            }
+        }
+    </script>
+</body>
+</html>
