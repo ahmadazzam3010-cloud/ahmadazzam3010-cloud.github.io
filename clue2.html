@@ -2,26 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>404 Not Found</title>
+    <title></title>
     <style>
         body {
             background-color: #000000;
-            color: #000000; /* Completely invisible text until highlighted */
+            color: #000000;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-family: monospace;
-            padding: 40px;
             user-select: text;
         }
-        .decoy-error {
-            color: #555555; /* Looks like a generic server crash message */
-            font-size: 14px;
-        }
-        .payload {
-            margin-top: 50px;
-            /* Matches the exact black background so it's hidden */
-            background-color: #000000; 
-            color: #000000;
-        }
-        /* When highlighted via Ctrl+A, text turns bright green */
         ::selection {
             background: #00ff66;
             color: #000000;
@@ -29,15 +22,6 @@
     </style>
 </head>
 <body>
-    <div class="decoy-error">
-        Error 503: Service temporarily unavailable. Stream node unresponsive.
-    </div>
-
-    <!-- Hidden payload revealed only on Ctrl + A selection -->
-    <div class="payload">
-        [INTERCEPTED STREAM DATA]
-        HEX_PAYLOAD: 5A 5A 59 2D 53 52 31
-        TARGET_NODE: clue2_target.png
-    </div>
+    5A 5A 59 2D 53 52 31 | clue2_target.png
 </body>
 </html>
